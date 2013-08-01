@@ -1,13 +1,10 @@
 #!/bin/sh
 
-#Enter root shell for multiple root commands
-sudo bash
-
 #############################
 #    General Preferences    #
 #############################
 
-#Create and admin user with a better name than 'user'
+#Create an admin user with a better name than 'user'
 #adduser patrick
 #adduser patrick sudo
 
@@ -22,8 +19,8 @@ sudo bash
 #############################
 
 #Fix CPU spike after closing lid to suspend. see http://www.cidgendered.com/?p=9
-####stop acpid
-####echo 'manual' > /etc/init/acpid.override
+stop acpid
+echo 'manual' > /etc/init/acpid.override
 
 #Install xdotool for enabling shortcut buttons
 #apt-get install xdotool
@@ -52,6 +49,3 @@ sudo bash
 ####apt-get update
 ####apt-get install sublime-text
 
-
-#All done! Exit root bash shell
-exit
