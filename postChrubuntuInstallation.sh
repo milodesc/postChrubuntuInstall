@@ -43,6 +43,8 @@
 
 #Install git
 #####apt-get install git-core
+#####git config --global core.editor "vi"
+
 
 #Install SublimeText
 ####add-apt-repository ppa:webupd8team/sublime-text-2
