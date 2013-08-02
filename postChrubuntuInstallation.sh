@@ -36,15 +36,18 @@
 #Add 'web' user?
 
 #Install Apache2
+####apt-get install apache2
 
 #Install mysql
+####apt-get install mysql-server mysql-client
 
 #Install PHP
+####apt-get install php5 libapache2-mod-php5 php5-mysql
+####service apache2 restart
 
 #Install git
 #####apt-get install git-core
 #####git config --global core.editor "vi"
-
 
 #Install SublimeText
 ####add-apt-repository ppa:webupd8team/sublime-text-2
