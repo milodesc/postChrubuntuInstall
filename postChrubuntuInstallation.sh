@@ -5,10 +5,12 @@
 #############################
 
 #Create an admin user with a better name than 'user'
+echo "STATUS: Creating a new administator user."
 #adduser patrick
 #adduser patrick sudo
 
 #Create script for rebooting into ChromeOS
+echo "STATUS: Creating a new administator user."
 ####echo '#!/bin/sh' > ~/Desktop/rebootToChromeOS.sh
 ####echo 'sudo cgpt add -i 6 -P 0 -S 1 /dev/sda' >> ~/Desktop/rebootToChromeOS.sh
 ####echo 'reboot' >> ~/Desktop/rebootToChromeOS.sh
@@ -19,6 +21,7 @@
 #############################
 
 #Fix CPU spike after closing lid to suspend. see http://www.cidgendered.com/?p=9
+echo "STATUS: Fixing CPU spike after closing lid to suspend."
 #stop acpid
 #echo 'manual' > /etc/init/acpid.override
 
@@ -27,6 +30,7 @@
 #echo 'xdotool installed, you can now create shortcut buttons'
 
 #Fix trackpad
+####cp /usr/share/X11/xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d
 
 
 ##############################
@@ -54,3 +58,4 @@
 ####apt-get update
 ####apt-get install sublime-text
 
+echo "All done. You should reboot for all changes to take effect."
