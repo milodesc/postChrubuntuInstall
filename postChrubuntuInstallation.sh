@@ -35,11 +35,11 @@ chmod 755 ~/Desktop/rebootToChromeOS.sh
 
 #Fix CPU spike after closing lid to suspend. see http://www.cidgendered.com/?p=9
 echo "STATUS: Fixing CPU spike after closing lid to suspend."
-stop acpid
-echo 'manual' > /etc/init/acpid.override
+sudo stop acpid
+sudo echo 'manual' > /etc/init/acpid.override
 
 #Install xdotool for enabling shortcut buttons
-apt-get install xdotool
+sudo apt-get install xdotool
 echo 'xdotool installed, you can now fix the shortcut buttons. follow instructions from here: http://www.reddit.com/r/chrubuntu/comments/1crefd/how_to_get_shortcut_keys_to_work_on_chrubuntu/'
 
 #Fix trackpad
