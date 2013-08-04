@@ -3,11 +3,24 @@
 #############################
 #    General Preferences    #
 #############################
+echo ""
+echo ""
 
 #Create an admin user with a better name than 'user'
-echo "STATUS: Creating a new administator user."
-#adduser patrick
-#adduser patrick sudo
+echo "STATUS: Creating a new administrator user."
+while true; do
+    read -p "Do you wish to create a new administrator user?  [Y/n]" yn
+    case $yn in
+        [Yy]* )  
+		echo "What is the user's name?";
+		read input_variable;
+		sudo adduser $input_variable;
+		sudo adduser $input_variable sudo;
+		break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
 #Create script for rebooting into ChromeOS
 echo "STATUS: Creating a new administator user."
