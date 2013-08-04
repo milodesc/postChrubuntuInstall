@@ -24,10 +24,10 @@ done
 
 #Create script for rebooting into ChromeOS
 echo "STATUS: Creating a script to boot into ChromeOS."
-####echo '#!/bin/sh' > ~/Desktop/rebootToChromeOS.sh
-####echo 'sudo cgpt add -i 6 -P 0 -S 1 /dev/sda' >> ~/Desktop/rebootToChromeOS.sh
-####echo 'reboot' >> ~/Desktop/rebootToChromeOS.sh
-####chmod 755 ~/Desktop/rebootToChromeOS.sh
+echo '#!/bin/sh' > ~/Desktop/rebootToChromeOS.sh
+echo 'sudo cgpt add -i 6 -P 0 -S 1 /dev/sda' >> ~/Desktop/rebootToChromeOS.sh
+echo 'reboot' >> ~/Desktop/rebootToChromeOS.sh
+chmod 755 ~/Desktop/rebootToChromeOS.sh
 
 #############################
 #    Chrubuntu bug fixes    #
