@@ -39,8 +39,8 @@ stop acpid
 echo 'manual' > /etc/init/acpid.override
 
 #Install xdotool for enabling shortcut buttons
-#apt-get install xdotool
-#echo 'xdotool installed, you can now create shortcut buttons'
+apt-get install xdotool
+echo 'xdotool installed, you can now fix the shortcut buttons. follow instructions from here: http://www.reddit.com/r/chrubuntu/comments/1crefd/how_to_get_shortcut_keys_to_work_on_chrubuntu/'
 
 #Fix trackpad
 sudo cp /usr/share/X11/xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d
