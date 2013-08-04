@@ -65,3 +65,4 @@ sudo apt-get update
 sudo apt-get install sublime-text
 
 echo "All done. You should reboot for all changes to take effect."
+
