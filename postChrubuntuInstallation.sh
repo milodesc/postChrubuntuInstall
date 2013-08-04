@@ -17,13 +17,13 @@ while true; do
 		sudo adduser $input_variable;
 		sudo adduser $input_variable sudo;
 		break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 #Create script for rebooting into ChromeOS
-echo "STATUS: Creating a new administator user."
+echo "STATUS: Creating a script to boot into ChromeOS."
 ####echo '#!/bin/sh' > ~/Desktop/rebootToChromeOS.sh
 ####echo 'sudo cgpt add -i 6 -P 0 -S 1 /dev/sda' >> ~/Desktop/rebootToChromeOS.sh
 ####echo 'reboot' >> ~/Desktop/rebootToChromeOS.sh
@@ -43,8 +43,8 @@ echo "STATUS: Fixing CPU spike after closing lid to suspend."
 #echo 'xdotool installed, you can now create shortcut buttons'
 
 #Fix trackpad
-####cp /usr/share/X11/xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d
-
+sudo cp /usr/share/X11/xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d
+sudo sed -i '/# http:\/\/who-t.blogspot.com\/2010\/11\/how-to-ignore-configuration-errors.html/a#The next 2 lines were added by the postChrubuntuInstallation script:\nOption "FingerLow" "4"\nOption "FingerHigh" "10"' /etc/X11/xorg.conf.d
 
 ##############################
 #        Development         #
