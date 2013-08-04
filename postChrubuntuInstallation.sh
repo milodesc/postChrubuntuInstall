@@ -50,25 +50,18 @@ sudo sed -i '/# http:\/\/who-t.blogspot.com\/2010\/11\/how-to-ignore-configurati
 #        Development         #
 ##############################
 
-#Add 'web' user?
-
-#Install Apache2
-####apt-get install apache2
-
-#Install mysql
-####apt-get install mysql-server mysql-client
-
-#Install PHP
-####apt-get install php5 libapache2-mod-php5 php5-mysql
-####service apache2 restart
+#Install Apache2, mysql and PHP
+sudo apt-get install lamp-server^
+sudo apt-get install phpmyadmin
+sudo service apache2 restart
 
 #Install git
-#####apt-get install git-core
-#####git config --global core.editor "vi"
+sudo apt-get install git-core
+git config --global core.editor "vi"
 
 #Install SublimeText
-####add-apt-repository ppa:webupd8team/sublime-text-2
-####apt-get update
-####apt-get install sublime-text
+sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo apt-get update
+sudo apt-get install sublime-text
 
 echo "All done. You should reboot for all changes to take effect."
