@@ -45,6 +45,7 @@ echo 'xdotool installed, you can now fix the shortcut buttons. follow instructio
 #Fix trackpad
 sudo cp /usr/share/X11/xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d
 sudo sed -i '/# http:\/\/who-t.blogspot.com\/2010\/11\/how-to-ignore-configuration-errors.html/a#The next 2 lines were added by the postChrubuntuInstallation script:\nOption "FingerLow" "4"\nOption "FingerHigh" "10"' /etc/X11/xorg.conf.d
+sudo sed -i '/# http:\/\/who-t.blogspot.com\/2010\/11\/how-to-ignore-configuration-errors.html/a#The next 2 lines were added by the postChrubuntuInstallation script:\nOption "FingerLow" "4"\nOption "FingerHigh" "10"' /usr/share/X11/xorg.conf.d/50-synaptics.conf
 
 ##############################
 #        Development         #
