@@ -33,13 +33,6 @@ chmod 755 ~/Desktop/rebootToChromeOS.sh
 #    Chrubuntu bug fixes    #
 #############################
 
-#Fix CPU spike after closing lid to suspend. see http://www.cidgendered.com/?p=9
-echo "STATUS: Fixing CPU spike after closing lid to suspend."
-sudo stop acpid
-sudo bash
-echo 'manual' > /etc/init/acpid.override
-exit
-
 #Install xdotool for enabling shortcut buttons
 sudo apt-get install xdotool
 echo 'xdotool installed, you can now fix the shortcut buttons. follow instructions from here: http://www.reddit.com/r/chrubuntu/comments/1crefd/how_to_get_shortcut_keys_to_work_on_chrubuntu/'
@@ -48,6 +41,27 @@ echo 'xdotool installed, you can now fix the shortcut buttons. follow instructio
 sudo cp /usr/share/X11/xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d
 sudo sed -i '/# http:\/\/who-t.blogspot.com\/2010\/11\/how-to-ignore-configuration-errors.html/a#The next 2 lines were added by the postChrubuntuInstallation script:\nOption "FingerLow" "4"\nOption "FingerHigh" "10"' /etc/X11/xorg.conf.d
 sudo sed -i '/# http:\/\/who-t.blogspot.com\/2010\/11\/how-to-ignore-configuration-errors.html/a#The next 2 lines were added by the postChrubuntuInstallation script:\nOption "FingerLow" "4"\nOption "FingerHigh" "10"' /usr/share/X11/xorg.conf.d/50-synaptics.conf
+
+#Fix CPU spike after closing lid to suspend. see http://www.cidgendered.com/?p=9
+echo "STATUS: Fixing CPU spike after closing lid to suspend."
+sudo stop acpid
+sudo bash
+echo 'manual' > /etc/init/acpid.override
+exit
+
+#backups of the deb files are here: https://dl.dropboxusercontent.com/u/3686035/chrubuntu_fixes/
+#Alternate CPU spike on lid close fix
+####wget http://www.cisgendered.com/~keyvin/acpid_2.0.10-1_amd64.deb
+####sudo dpkg -i acpid_2.0.10-1_amd64.deb
+
+#Virtualbox not working?
+####wget http://www.cisgendered.com/~keyvin/virtualbox-kernel-mods-3.4.0.deb
+####sudo dpkg -i virtualbox-kernel-mods-3.4.0.deb
+
+#Internal mic not working?
+####wget http://www.cisgendered.com/~keyvin/mic-fix.deb
+####sudo dpkg -i mic-fix.deb
+####sudo shutdown -r now
 
 ##############################
 #        Development         #
@@ -66,6 +80,7 @@ git config --global core.editor "vi"
 sudo add-apt-repository ppa:webupd8team/sublime-text-2
 sudo apt-get update
 sudo apt-get install sublime-text
+
 
 echo "All done. You should reboot for all changes to take effect."
 
