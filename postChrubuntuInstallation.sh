@@ -36,7 +36,9 @@ chmod 755 ~/Desktop/rebootToChromeOS.sh
 #Fix CPU spike after closing lid to suspend. see http://www.cidgendered.com/?p=9
 echo "STATUS: Fixing CPU spike after closing lid to suspend."
 sudo stop acpid
-sudo echo 'manual' > /etc/init/acpid.override
+sudo bash
+echo 'manual' > /etc/init/acpid.override
+exit
 
 #Install xdotool for enabling shortcut buttons
 sudo apt-get install xdotool
