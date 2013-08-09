@@ -1,10 +1,11 @@
 #!/bin/sh
 
+
+
+
 #############################
 #    General Preferences    #
 #############################
-echo ""
-echo ""
 
 #Create an admin user with a better name than 'user'
 echo "STATUS: Creating a new administrator user."
@@ -29,6 +30,30 @@ echo 'sudo cgpt add -i 6 -P 0 -S 1 /dev/sda' >> ~/Desktop/rebootToChromeOS.sh
 echo 'sudo reboot' >> ~/Desktop/rebootToChromeOS.sh
 chmod 755 ~/Desktop/rebootToChromeOS.sh
 
+
+
+
+##############################
+#        Development         #
+##############################
+
+#Install Apache2, mysql and PHP
+sudo apt-get install lamp-server^
+sudo apt-get install phpmyadmin
+sudo service apache2 restart
+
+#Install git
+sudo apt-get install git-core
+git config --global core.editor "vi"
+
+#Install SublimeText
+sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo apt-get update
+sudo apt-get install sublime-text
+
+
+
+
 #############################
 #    Chrubuntu bug fixes    #
 #############################
@@ -38,8 +63,6 @@ sudo apt-get install xdotool
 echo 'xdotool installed, you can now fix the shortcut buttons. follow instructions from here: http://www.reddit.com/r/chrubuntu/comments/1crefd/how_to_get_shortcut_keys_to_work_on_chrubuntu/'
 
 #Fix trackpad
-sudo cp /usr/share/X11/xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d
-sudo sed -i '/# http:\/\/who-t.blogspot.com\/2010\/11\/how-to-ignore-configuration-errors.html/a#The next 2 lines were added by the postChrubuntuInstallation script:\nOption "FingerLow" "4"\nOption "FingerHigh" "10"' /etc/X11/xorg.conf.d
 sudo sed -i '/# http:\/\/who-t.blogspot.com\/2010\/11\/how-to-ignore-configuration-errors.html/a#The next 2 lines were added by the postChrubuntuInstallation script:\nOption "FingerLow" "4"\nOption "FingerHigh" "10"' /usr/share/X11/xorg.conf.d/50-synaptics.conf
 
 #Fix CPU spike after closing lid to suspend. see http://www.cidgendered.com/?p=9
@@ -63,24 +86,4 @@ exit
 ####sudo dpkg -i mic-fix.deb
 ####sudo shutdown -r now
 
-##############################
-#        Development         #
-##############################
-
-#Install Apache2, mysql and PHP
-sudo apt-get install lamp-server^
-sudo apt-get install phpmyadmin
-sudo service apache2 restart
-
-#Install git
-sudo apt-get install git-core
-git config --global core.editor "vi"
-
-#Install SublimeText
-sudo add-apt-repository ppa:webupd8team/sublime-text-2
-sudo apt-get update
-sudo apt-get install sublime-text
-
-
 echo "All done. You should reboot for all changes to take effect."
-
