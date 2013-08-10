@@ -65,6 +65,10 @@ echo 'xdotool installed, you can now fix the shortcut buttons. follow instructio
 #Fix trackpad
 sudo sed -i '/# http:\/\/who-t.blogspot.com\/2010\/11\/how-to-ignore-configuration-errors.html/a#The next 2 lines were added by the postChrubuntuInstallation script:\nOption "FingerLow" "4"\nOption "FingerHigh" "10"' /usr/share/X11/xorg.conf.d/50-synaptics.conf
 
+#Virtualbox not working?
+wget http://www.cisgendered.com/~keyvin/virtualbox-kernel-mods-3.4.0.deb
+sudo dpkg -i virtualbox-kernel-mods-3.4.0.deb
+
 #Fix CPU spike after closing lid to suspend. see http://www.cidgendered.com/?p=9
 echo "STATUS: Fixing CPU spike after closing lid to suspend."
 sudo stop acpid
@@ -76,10 +80,6 @@ exit
 #Alternate CPU spike on lid close fix
 ####wget http://www.cisgendered.com/~keyvin/acpid_2.0.10-1_amd64.deb
 ####sudo dpkg -i acpid_2.0.10-1_amd64.deb
-
-#Virtualbox not working?
-####wget http://www.cisgendered.com/~keyvin/virtualbox-kernel-mods-3.4.0.deb
-####sudo dpkg -i virtualbox-kernel-mods-3.4.0.deb
 
 #Internal mic not working?
 ####wget http://www.cisgendered.com/~keyvin/mic-fix.deb
