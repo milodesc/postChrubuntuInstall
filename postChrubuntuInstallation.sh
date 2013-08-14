@@ -51,6 +51,10 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-2
 sudo apt-get update
 sudo apt-get install sublime-text
 
+#Install sass/compass
+sudo apt-get install ruby1.9.1
+sudo gem install sass
+sudo gem install compass
 
 
 
